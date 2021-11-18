@@ -1,0 +1,42 @@
+h1 {
+    color: white;
+    font-size: 30px;
+    text-align: center;
+    margin-top: 20px;
+} 
+
+
+h2 {
+    color: white;
+    font-size: 20px;
+    margin-left: 30px;
+    margin-top: 10px;
+
+}
+
+.btn {
+    margin-left: 30px;
+    margin-bottom: 10px;
+}
+
+
+.imagenes {
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 2em;
+        padding-top: 30px;
+        padding-bottom: 30px;
+        max-width: 70rem;
+        width: 100%;
+    
+}
+
+img {
+    cursor:pointer
+}
+
+
+
+
+

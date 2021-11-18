@@ -1,0 +1,46 @@
+<div *ngIf="usuario">
+    <h1>{{usuario.name}}</h1>
+    <h2><span>Website:</span> {{usuario.website}}</h2>
+    <h2><span>Company:</span> {{usuario.company.name}}</h2>
+    <h2><span>Company bs:</span> {{usuario.company.bs}}</h2>
+    <h2><span>Company catchPhrase:</span> {{usuario.company.catchPhrase}}</h2>
+
+</div>
+<br>
+<br>
+<br>
+<button (click)="obtenerPosteosDeUsuario()" class="btn btn-danger">Posteos</button>
+<button (click)=" obtenerAlbumesDeUsuario()" class="btn btn-danger">Albumes</button>
+<button (click)="obtenerTODOs()" class="btn btn-danger">TODOs</button>
+<br>
+<br>
+<div *ngFor="let todo of todos">
+    <p>TODO</p>
+    <p><span>ID: </span>{{todo.id}}</p>
+    <p><span>Title: </span>{{todo.title}}</p>
+    <p><span>Completed: </span>{{todo.completed}}</p>
+    <hr>
+</div>
+<br>
+<br>
+<div *ngFor="let posteo of posteos">
+    <p>POSTEO</p>
+    <p><span>UserID: </span>{{posteo.userId}}</p>
+    <p><span>Title: </span>{{posteo.title}}</p>
+    <p><span>Body: </span>{{posteo.body}}</p>
+    <hr>
+ 
+</div>
+<br>
+<br>
+<div *ngFor="let album of albumes">
+    <p>ALBUM</p>
+    <p><span>UserID: </span>{{album.userId}}</p>
+    <p><span>ID: </span>{{album.id}}</p>
+    <p><span>TItle: </span>{{album.title}}</p>
+    <hr>
+ 
+</div>
+<br>
+<br>
+<button id="voler" class="btn btn-primary" [routerLink]="['/usuarios']">Volver</button>

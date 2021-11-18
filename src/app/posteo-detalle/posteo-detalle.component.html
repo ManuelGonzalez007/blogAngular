@@ -1,0 +1,30 @@
+<button (click)="obtenerUsuario()"  class="btn btn-danger">Info Usuario</button>
+<br>
+<br>
+<div *ngIf="usuario">
+    <h1>{{usuario.name}}</h1>
+    <h2><span>Website:</span> {{usuario.website}}</h2>
+    <h2><span>Company:</span> {{usuario.company.name}}</h2>
+    <h2><span>Company bs:</span> {{usuario.company.bs}}</h2>
+    <h2><span>Company catchPhrase:</span> {{usuario.company.catchPhrase}}</h2>
+</div>
+<hr>
+<div *ngFor="let posteo of posteos">
+    <p><span>UserID: </span>{{posteo.userId}}</p>
+    <p><span>Title: </span>{{posteo.title}}</p>
+    <p><span>Body: </span>{{posteo.body}}</p>
+    <button (click)="obtenerComentarios(posteo)" class="btn btn-danger">Comentarios</button>
+    <hr>
+ 
+</div>
+<button id="voler" class="btn btn-primary" [routerLink]="['/posteos']">Volver</button>
+
+<div id="comentarios" *ngFor="let comentario of comentarioEmail">
+
+    <p><span>Nombre:</span> {{comentario.name}}</p>
+    <p><span>Email:</span> {{comentario.email}}</p>
+    <p><span>Body:</span> {{comentario.body}}</p>
+
+
+</div>
+

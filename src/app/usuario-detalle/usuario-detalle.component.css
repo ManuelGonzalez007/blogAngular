@@ -1,0 +1,41 @@
+h1 {
+    color: white;
+    font-size: 30px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+h2 {
+    color: white;
+    font-size: 20px;
+    margin-left: 30px;
+
+}
+
+span {
+    color: red;
+    font-family: monospace;
+    margin-left: 20px;
+}
+
+h3 {
+    color: white;
+    font-size: 20px;
+}
+
+
+.btn {
+    margin-right: 5px;
+    margin-left: 25px;
+    margin-bottom: 10px;
+}
+
+p {
+    color: white;
+    margin-left: 5px;
+}
+
+hr {
+    color: beige;
+}
+

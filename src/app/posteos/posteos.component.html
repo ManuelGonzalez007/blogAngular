@@ -1,0 +1,14 @@
+<h1>POSTEOS</h1>
+<h2>Selecciona un usuario para ver sus posteos</h2>
+<br>
+<br>
+<div *ngFor="let usuario of usuarios">
+    <ul>
+        <li [routerLink]="['/posteoDetalle', usuario.id]"><span>{{usuario.name}}</span></li>      
+      
+    </ul>
+
+</div>
+
+<button class="btn btn-primary" [routerLink]="['/home']">Volver</button>
+

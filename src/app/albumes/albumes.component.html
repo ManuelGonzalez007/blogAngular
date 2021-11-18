@@ -1,0 +1,15 @@
+<h1>ALBUMES</h1>
+<h2>Selecciona un album para ver mas informacion</h2>
+<br>
+<br>
+
+<div *ngFor="let album of albumes">
+    <ul>
+        <li [routerLink]="['/albumDetalle', album.id]"><span>{{album.title}}</span></li>
+    </ul>
+
+</div>
+
+
+
+<button class="btn btn-primary" [routerLink]="['/home']">Volver</button>

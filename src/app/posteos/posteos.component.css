@@ -1,0 +1,27 @@
+h1 {
+    color: violet;
+    font-size: 30px;
+    text-align: center;
+    margin-top: 10px;
+
+}
+
+h2 {
+    color: white;
+    font-size: 20px;
+    margin-left: 20px;
+}
+
+li {
+    color: white;  
+}
+
+span {
+    color: red;
+    cursor: pointer;
+}
+
+.btn {
+    margin-left: 30px;
+    margin-bottom: 30px;
+}

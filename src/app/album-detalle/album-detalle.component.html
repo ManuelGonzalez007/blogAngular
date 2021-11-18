@@ -1,0 +1,19 @@
+<div *ngIf="album">
+    <h2>User ID: {{album.userId}}</h2>
+    <h2>Id: {{album.id}}</h2>
+    <h1>{{album.title}}</h1>
+</div>
+<br>
+<button (click)="obtenerImagenes()" class="btn btn-danger">Galeria de Fotos</button>
+<button [routerLink]="['/usuarios']" class="btn btn-danger">Usuarios</button>
+<br>
+<br>
+<div class="imagenes" *ngFor="let foto of fotos">   
+    <div>
+        <img (click)="agrandarImagen(foto)" [src]="foto.thumbnailUrl">      
+        <button (click)="borrarImagen(foto)" class="btn btn-danger">Eliminar</button>
+    </div>
+
+</div>
+
+<button class="btn btn-primary" [routerLink]="['/albumes']">Volver</button>
