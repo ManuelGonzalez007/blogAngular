@@ -15,28 +15,40 @@ h2 {
 }
 
 .btn {
-    margin-left: 30px;
-    margin-bottom: 10px;
+    margin-left: 25px;
+    margin-bottom: 20px;
+    margin-top: 15px;
 }
 
 
 .imagenes {
-        margin: 0 auto;
-        display: grid;
-        grid-template-columns: repeat(5, 1fr);
-        gap: 2em;
-        padding-top: 30px;
-        padding-bottom: 30px;
-        max-width: 70rem;
-        width: 100%;
-    
+    display: inline;
+    margin: 0 5px;
+    margin-top: 5px;
 }
+
+
+
 
 img {
     cursor:pointer
 }
 
 
+    span {
+        color: red;
+        font-family: monospace;
+    }
 
 
+p {
+    color: white;
+    font-size: 20px;
+    margin-left: 30px;
+
+}
+
+hr {
+    color: beige;
+}
 

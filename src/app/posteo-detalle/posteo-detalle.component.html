@@ -13,17 +13,22 @@
     <p><span>UserID: </span>{{posteo.userId}}</p>
     <p><span>Title: </span>{{posteo.title}}</p>
     <p><span>Body: </span>{{posteo.body}}</p>
+   
+
     <button (click)="obtenerComentarios(posteo)" class="btn btn-danger">Comentarios</button>
+  
     <hr>
  
 </div>
-<button id="voler" class="btn btn-primary" [routerLink]="['/posteos']">Volver</button>
+<button class="btn btn-primary" [routerLink]="['/posteos']">Volver</button>
+<h2 #myElem>Comentarios</h2>
 
-<div id="comentarios" *ngFor="let comentario of comentarioEmail">
-
+<div *ngFor="let comentario of comentario">
+   
     <p><span>Nombre:</span> {{comentario.name}}</p>
     <p><span>Email:</span> {{comentario.email}}</p>
     <p><span>Body:</span> {{comentario.body}}</p>
+    <hr>
 
 
 </div>

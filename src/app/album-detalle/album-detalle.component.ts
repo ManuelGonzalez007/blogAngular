@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Blog } from 'modelo/modelo';
 import { BlogService } from 'servicio/blog.service';
@@ -9,14 +9,16 @@ import { BlogService } from 'servicio/blog.service';
   styleUrls: ['./album-detalle.component.css']
 })
 export class AlbumDetalleComponent implements OnInit {
+  @ViewChild("myElem") MyProp!: ElementRef;
   id: number | null;
-  album: Blog | null;
   fotos: Blog[] = [];
+  usuario: Blog | null
+  albumes: Blog[] = []
 
   constructor(private elementRef: ElementRef,  private aRouter: ActivatedRoute,
     private servicio: BlogService) { 
     this.id = Number(this.aRouter.snapshot.paramMap.get("id"))
-    this.album = null
+    this.usuario = null
     
   }
 
@@ -26,21 +28,22 @@ export class AlbumDetalleComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.obtenerAlbum()
+    this.obtenerAlbumesDeUsuario()
   }
 
-  obtenerAlbum(){
+  obtenerAlbumesDeUsuario() {
     if (this.id !== null) {
-    this.servicio.obtenerPosteo(this.id).subscribe(data => {
-      console.log(data)
-      this.album = data
-    })
-  }
+      this.servicio.obtenerAlbumesDeUsuario(this.id).subscribe(data => {
+        console.log(data)
+        this.albumes = data
+      })
+    }
   }
 
-  obtenerImagenes(){
+  obtenerImagenes(imagenes:Blog){
+    this.MyProp.nativeElement.scrollIntoView({ behavior: "smooth", block: "start" });
     if (this.id !== null) {
-    this.servicio.obtenerImagenes(this.id).subscribe(data => {
+    this.servicio.obtenerImagenes(imagenes.id).subscribe(data => {
       console.log(data)
       this.fotos = data
     })
@@ -69,6 +72,15 @@ export class AlbumDetalleComponent implements OnInit {
   borrarImagen(imagen: Blog) {
     let index = this.fotos.indexOf(imagen);
     this.fotos.splice(index, 1);
+  }
+
+  obtenerUsuario() {
+    if (this.id !== null) {
+      this.servicio.obtenerUsuario(this.id).subscribe(data => {
+        console.log(data)
+        this.usuario = data
+      })
+    }
   }
 
 }

@@ -1,12 +1,5 @@
-h1 {
-    color: violet;
-    font-size: 30px;
-    text-align: center;
-    margin-top: 10px;
-
-}
-
 h2 {
+    margin-top: 10px;
     color: white;
     font-size: 20px;
     margin-left: 20px;
@@ -17,11 +10,9 @@ li {
 }
 
 span {
-    color: red;
     cursor: pointer;
 }
 
 .btn {
-    margin-left: 30px;
-    margin-bottom: 30px;
+    margin-right: 50px;
 }

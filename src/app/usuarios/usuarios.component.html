@@ -1,11 +1,10 @@
-<h1>LISTA DE USUARIOS</h1>
 <h2>Selecciona un usuario para ver su informacion</h2>
 <br>
 <br>
 
 <div *ngFor="let usuario of usuarios">
     <ul>
-        <li [routerLink]="['/usuarioDetalle', usuario.id]"><span>{{usuario.name}} {{usuario.id}}</span></li>
+        <li [routerLink]="['/usuarioDetalle', usuario.id]"><span>{{usuario.name}}</span></li>
     </ul>
 
 </div>

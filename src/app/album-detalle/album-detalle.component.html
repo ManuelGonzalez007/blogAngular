@@ -1,19 +1,29 @@
-<div *ngIf="album">
-    <h2>User ID: {{album.userId}}</h2>
-    <h2>Id: {{album.id}}</h2>
-    <h1>{{album.title}}</h1>
+<button (click)="obtenerUsuario()" class="btn btn-danger">Info Usuario</button>
+<br>
+<br>
+<div *ngIf="usuario">
+    <h1>{{usuario.name}}</h1>
+    <h2><span>Website: </span>{{usuario.website}}</h2>
+    <h2><span>Company: </span>{{usuario.company.name}}</h2>
+    <h2><span>Company bs: </span>{{usuario.company.bs}}</h2>
+    <h2><span>Company catchPhrase: </span>{{usuario.company.catchPhrase}}</h2>
 </div>
 <br>
-<button (click)="obtenerImagenes()" class="btn btn-danger">Galeria de Fotos</button>
-<button [routerLink]="['/usuarios']" class="btn btn-danger">Usuarios</button>
-<br>
-<br>
-<div class="imagenes" *ngFor="let foto of fotos">   
-    <div>
-        <img (click)="agrandarImagen(foto)" [src]="foto.thumbnailUrl">      
-        <button (click)="borrarImagen(foto)" class="btn btn-danger">Eliminar</button>
-    </div>
-
+<hr>
+<div *ngFor="let album of albumes">
+    <p><span>UserID: </span>{{album.userId}}</p>
+    <p><span>ID: </span>{{album.id}}</p>
+    <p><span>Title: </span>{{album.title}}</p>
+    <button (click)="obtenerImagenes(album)" class="btn btn-danger">Galeria de Fotos</button>
+    <hr>
 </div>
-
+<br>
+<br>
 <button class="btn btn-primary" [routerLink]="['/albumes']">Volver</button>
+<h2 #myElem>Galeria de Fotos</h2>
+<div class="imagenes" *ngFor="let foto of fotos">
+    
+        <img (click)="agrandarImagen(foto)" [src]="foto.thumbnailUrl">        
+        <button (click)="borrarImagen(foto)" class="btn btn-danger">Eliminar</button>
+    
+</div>

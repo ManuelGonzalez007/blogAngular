@@ -8,7 +8,7 @@ import { BlogService } from 'servicio/blog.service';
   styleUrls: ['./albumes.component.css']
 })
 export class AlbumesComponent implements OnInit {
-  albumes: Blog[] = []
+  usuarios: Blog[] = []
 
   constructor(private elementRef: ElementRef, private servicio: BlogService) { }
 
@@ -18,14 +18,14 @@ export class AlbumesComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.obtenerAlbumes()
+    this.obtenerUsuarios()
   }
 
-  obtenerAlbumes(){
-    this.servicio.obtenerAlbumes().subscribe(data => {
-      this.albumes= data
+  obtenerUsuarios() {
+    this.servicio.obtenerUsuarios().subscribe(data => {
+      this.usuarios = data
       console.log(data) 
-    })
-  }
+    }) 
+}
 
 }

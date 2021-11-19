@@ -1,15 +1,14 @@
-<h1>ALBUMES</h1>
-<h2>Selecciona un album para ver mas informacion</h2>
+<h2>Selecciona un usuario para ver sus albumes</h2>
 <br>
 <br>
 
-<div *ngFor="let album of albumes">
+<div *ngFor="let usuario of usuarios">
     <ul>
-        <li [routerLink]="['/albumDetalle', album.id]"><span>{{album.title}}</span></li>
+        <li [routerLink]="['/albumDetalle', usuario.id]"><span>{{usuario.name}}</span></li>
     </ul>
 
 </div>
 
 
 
-<button class="btn btn-primary" [routerLink]="['/home']">Volver</button>
+<button class="btn btn-primary float-end" [routerLink]="['/home']">Volver</button>
