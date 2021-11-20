@@ -21,7 +21,9 @@
 <br>
 <button class="btn btn-primary" [routerLink]="['/albumes']">Volver</button>
 <h2 #myElem>Galeria de Fotos</h2>
-<div class="imagenes" *ngFor="let foto of fotos">
-    <img (click)="agrandarImagen(foto)" [src]="foto.thumbnailUrl">
-    <button (click)="borrarImagen(foto)" class="btn btn-danger">Eliminar</button>
+<div class="galeria">
+    <div *ngFor="let foto of fotos">
+        <img (click)="agrandarImagen($event)" [src]="foto.thumbnailUrl">
+        <button (click)="borrarImagen(foto)" class="btn btn-danger">Eliminar</button>
+    </div>
 </div>

@@ -56,8 +56,8 @@ export class BlogService {
     return this.http.get(path)
   }
 
-  modificarTodo() {
-    const path = this.url + "/users/todos"
-    return this.http.patch(path, { "completed": true })
+  actualizarTodo(id:any, estadoTodo:any): Observable<any> {
+    const path = this.url + "/todos/" + id
+    return this.http.patch(path, { "completed": estadoTodo })
   }
 }

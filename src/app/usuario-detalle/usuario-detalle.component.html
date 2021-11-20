@@ -17,7 +17,8 @@
     <p>TODO</p>
     <p><span>ID: </span>{{todo.id}}</p>
     <p><span>Title: </span>{{todo.title}}</p>
-    <p (click)="modificarTodo(todo)"><span>Completed: </span>{{todo.completed}}</p>
+    <p style="display: inline;"><span>Completed: </span>{{todo.completed}}</p>
+    <button (click)="actualizarTodo(todo)" style="display: inline;" class="{{todo.completed ? 'btn btn-danger' : 'btn btn-success'}}">{{todo.completed ? "Marcar como incompleto" : "Marcar como completado"}}</button>
     <hr>
 </div>
 <br>

@@ -18,12 +18,6 @@ h2 {
     margin-top: 15px;
 }
 
-.imagenes {
-    display: inline;
-    margin: 0 5px;
-    margin-top: 5px;
-}
-
 img {
     cursor: pointer;
 }
@@ -41,4 +35,16 @@ p {
 
 hr {
     color: beige;
+}
+
+.galeria {
+    min-height: 500px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 2em;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    max-width: 70rem;
+    width: 100%;
 }

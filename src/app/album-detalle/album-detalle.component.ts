@@ -49,18 +49,14 @@ export class AlbumDetalleComponent implements OnInit {
     }
   }
 
-  agrandarImagen(imagen: Blog) {
-    let index = this.fotos.indexOf(imagen);
-    this.fotos[index].thumbnailUrl = this.fotos[index].url
-    setTimeout(() => {
-      this.achicarImagen(imagen)
-      console.log("time")
-    }, 1000);
-  }
+  agrandarImagen(target: any) {
+    console.log(target)
+    target.path[0].style = "width: 200px"
 
-  achicarImagen(imagen: Blog) {
-    let index = this.fotos.indexOf(imagen);
-    this.fotos[index].thumbnailUrl = this.fotos[index].thumbnailUrl
+    setTimeout(() => {
+      target.path[0].style = "width: 150px"
+    }, 1000);
+
   }
 
   borrarImagen(imagen: Blog) {

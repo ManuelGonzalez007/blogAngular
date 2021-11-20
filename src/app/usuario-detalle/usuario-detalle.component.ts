@@ -72,11 +72,10 @@ export class UsuarioDetalleComponent implements OnInit {
     }
   }
 
-  modificarTodo(todo: Blog) {
-    this.servicio.modificarTodo().subscribe(data => {
-      let array = Object.keys(data)
-      this.todos = array
-      console.log(this.todos)
+  actualizarTodo(todo: Blog) {
+    this.servicio.actualizarTodo(todo.id,!todo.completed).subscribe(data => {  
+      console.log(data)
+      todo.completed = data.completed
     })
   }
 }

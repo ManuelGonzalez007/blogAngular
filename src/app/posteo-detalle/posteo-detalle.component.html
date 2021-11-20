@@ -18,9 +18,11 @@
 </div>
 <button class="btn btn-primary" [routerLink]="['/posteos']">Volver</button>
 <h2 #myElem>Comentarios</h2>
-<div *ngFor="let comentario of comentario">
-    <p><span>Nombre:</span> {{comentario.name}}</p>
-    <p><span>Email:</span> {{comentario.email}}</p>
-    <p><span>Body:</span> {{comentario.body}}</p>
-    <hr>
+<div style="min-height: 500px;">
+    <div *ngFor="let comentario of comentario">
+        <p><span>Nombre:</span> {{comentario.name}}</p>
+        <p><span>Email:</span> {{comentario.email}}</p>
+        <p><span>Body:</span> {{comentario.body}}</p>
+        <hr>
+    </div>
 </div>
