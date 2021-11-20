@@ -1,14 +1,9 @@
 <h2>Selecciona un usuario para ver sus albumes</h2>
 <br>
 <br>
-
 <div *ngFor="let usuario of usuarios">
     <ul>
         <li [routerLink]="['/albumDetalle', usuario.id]"><span>{{usuario.name}}</span></li>
     </ul>
-
 </div>
-
-
-
 <button class="btn btn-primary float-end" [routerLink]="['/home']">Volver</button>

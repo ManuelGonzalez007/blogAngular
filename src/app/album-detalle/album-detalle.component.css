@@ -3,15 +3,13 @@ h1 {
     font-size: 30px;
     text-align: center;
     margin-top: 20px;
-} 
-
+}
 
 h2 {
     color: white;
     font-size: 20px;
     margin-left: 30px;
     margin-top: 10px;
-
 }
 
 .btn {
@@ -20,35 +18,27 @@ h2 {
     margin-top: 15px;
 }
 
-
 .imagenes {
     display: inline;
     margin: 0 5px;
     margin-top: 5px;
 }
 
-
-
-
 img {
-    cursor:pointer
+    cursor: pointer;
 }
 
-
-    span {
-        color: red;
-        font-family: monospace;
-    }
-
+span {
+    color: red;
+    font-family: monospace;
+}
 
 p {
     color: white;
     font-size: 20px;
     margin-left: 30px;
-
 }
 
 hr {
     color: beige;
 }
-

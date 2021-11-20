@@ -24,8 +24,7 @@ export class AlbumesComponent implements OnInit {
   obtenerUsuarios() {
     this.servicio.obtenerUsuarios().subscribe(data => {
       this.usuarios = data
-      console.log(data) 
-    }) 
-}
-
+      console.log(data)
+    })
+  }
 }

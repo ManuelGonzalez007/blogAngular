@@ -8,7 +8,6 @@ import { BlogService } from 'servicio/blog.service';
   styleUrls: ['./usuarios.component.css']
 })
 export class UsuariosComponent implements OnInit {
-
   usuarios: Blog[] = []
 
   constructor(private elementRef: ElementRef, private servicio: BlogService) { }
@@ -22,13 +21,10 @@ export class UsuariosComponent implements OnInit {
     this.obtenerUsuarios()
   }
 
-
   obtenerUsuarios() {
-      this.servicio.obtenerUsuarios().subscribe(data => {
-        console.log(data)
-        this.usuarios = data
-      })
-   
+    this.servicio.obtenerUsuarios().subscribe(data => {
+      console.log(data)
+      this.usuarios = data
+    })
   }
-
 }

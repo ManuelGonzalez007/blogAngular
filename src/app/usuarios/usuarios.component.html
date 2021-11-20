@@ -1,14 +1,9 @@
 <h2>Selecciona un usuario para ver su informacion</h2>
 <br>
 <br>
-
 <div *ngFor="let usuario of usuarios">
     <ul>
         <li [routerLink]="['/usuarioDetalle', usuario.id]"><span>{{usuario.name}}</span></li>
     </ul>
-
 </div>
-
-
-
 <button class="btn btn-primary float-end" [routerLink]="['/home']">Volver</button>

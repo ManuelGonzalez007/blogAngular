@@ -11,15 +11,14 @@ import { BlogService } from 'servicio/blog.service';
 export class UsuarioDetalleComponent implements OnInit {
   id: number | null;
   usuario: Blog | null
-  todos: Blog[]= []
+  todos: any
   posteos: Blog[] = []
   albumes: Blog[] = []
 
   constructor(private elementRef: ElementRef, private aRouter: ActivatedRoute,
-    private servicio: BlogService) { 
+    private servicio: BlogService) {
     this.id = Number(this.aRouter.snapshot.paramMap.get("id"))
     this.usuario = null
-
   }
 
   ngAfterViewInit() {
@@ -31,16 +30,18 @@ export class UsuarioDetalleComponent implements OnInit {
     this.obtenerUsuario()
   }
 
-  obtenerUsuario(){
+  obtenerUsuario() {
     if (this.id !== null) {
-    this.servicio.obtenerUsuario(this.id).subscribe(data => {
-      console.log(data)
-      this.usuario = data
-    })
-  }
+      this.servicio.obtenerUsuario(this.id).subscribe(data => {
+        console.log(data)
+        this.usuario = data
+      })
+    }
   }
 
-  obtenerTODOs(){
+  obtenerTODOs() {
+    this.posteos = []
+    this.albumes = []
     if (this.id !== null) {
       this.servicio.obtenerTODOs(this.id).subscribe(data => {
         console.log(data)
@@ -49,22 +50,33 @@ export class UsuarioDetalleComponent implements OnInit {
     }
   }
 
-  obtenerPosteosDeUsuario(){
+  obtenerPosteosDeUsuario() {
+    this.todos = []
+    this.albumes = []
     if (this.id !== null) {
       this.servicio.obtenerPosteosDeUsuario(this.id).subscribe(data => {
         console.log(data)
-        this.posteos= data
+        this.posteos = data
       })
     }
   }
 
-  obtenerAlbumesDeUsuario(){
+  obtenerAlbumesDeUsuario() {
+    this.posteos = []
+    this.todos = []
     if (this.id !== null) {
       this.servicio.obtenerAlbumesDeUsuario(this.id).subscribe(data => {
         console.log(data)
-        this.albumes= data
+        this.albumes = data
       })
     }
   }
 
+  modificarTodo(todo: Blog) {
+    this.servicio.modificarTodo().subscribe(data => {
+      let array = Object.keys(data)
+      this.todos = array
+      console.log(this.todos)
+    })
+  }
 }

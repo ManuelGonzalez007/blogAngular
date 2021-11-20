@@ -11,66 +11,53 @@ export class BlogService {
 
   constructor(private http: HttpClient) { }
 
-  obtenerUsuarios():Observable<any> {
+  obtenerUsuarios(): Observable<any> {
     const path = this.url + "/users"
     return this.http.get(path)
   }
 
-  obtenerUsuario(id:number):Observable<any> {
+  obtenerUsuario(id: number): Observable<any> {
     const path = this.url + "/users/" + id
     return this.http.get(path)
   }
 
-  obtenerPosteos():Observable<any> {
-    const path = this.url + "/posts"
-    return this.http.get(path)
-  }
-
-  obtenerPosteo(id:number):Observable<any> {
+  obtenerPosteo(id: number): Observable<any> {
     const path = this.url + "/posts/" + id
     return this.http.get(path)
   }
 
-  obtenerComentarios(id:number):Observable<any> {
+  obtenerComentarios(id: number): Observable<any> {
     const path = this.url + "/posts/" + id + "/comments"
     return this.http.get(path)
   }
 
-  obtenerAlbumes():Observable<any> {
-    const path = this.url + "/albums"
-    return this.http.get(path)
-  }
-
-  obtenerAlbum(id:number):Observable<any> {
+  obtenerAlbum(id: number): Observable<any> {
     const path = this.url + "/albums/" + id
     return this.http.get(path)
   }
 
-  obtenerImagenes(id:number):Observable<any> {
+  obtenerImagenes(id: number): Observable<any> {
     const path = this.url + "/albums/" + id + "/photos"
     return this.http.get(path)
   }
 
-  obtenerTODOs(id:number):Observable<any> {
+  obtenerTODOs(id: number): Observable<any> {
     const path = this.url + "/users/" + id + "/todos"
     return this.http.get(path)
   }
 
-  obtenerPosteosDeUsuario(id:number):Observable<any> {
+  obtenerPosteosDeUsuario(id: number): Observable<any> {
     const path = this.url + "/users/" + id + "/posts"
     return this.http.get(path)
   }
 
-  obtenerAlbumesDeUsuario(id:number):Observable<any> {
+  obtenerAlbumesDeUsuario(id: number): Observable<any> {
     const path = this.url + "/users/" + id + "/albums"
     return this.http.get(path)
   }
 
-  obtenerComentario(id:any):Observable<any> {
-    const path = this.url + "/comments/" + id
-    return this.http.get(path)
+  modificarTodo() {
+    const path = this.url + "/users/todos"
+    return this.http.patch(path, { "completed": true })
   }
-
-
-
 }

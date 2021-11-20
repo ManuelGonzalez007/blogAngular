@@ -15,19 +15,18 @@ export class PosteoDetalleComponent implements OnInit {
   usuario: Blog | null
   posteos: Blog[] = []
 
-
   constructor(private elementRef: ElementRef, private aRouter: ActivatedRoute,
     private servicio: BlogService) {
     this.id = Number(this.aRouter.snapshot.paramMap.get("id"))
     this.usuario = null
-    }
+  }
 
   ngAfterViewInit() {
     this.elementRef.nativeElement.ownerDocument.body
       .style.backgroundColor = 'black';
   }
 
-  ngOnInit(): void {   
+  ngOnInit(): void {
     this.obtenerPosteosDeUsuario()
   }
 
@@ -54,6 +53,6 @@ export class PosteoDetalleComponent implements OnInit {
     this.servicio.obtenerComentarios(comentario.id).subscribe(data => {
       this.comentario = data
       console.log(data)
-})}
-
+    })
+  }
 }

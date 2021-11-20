@@ -9,9 +9,8 @@ import { BlogService } from 'servicio/blog.service';
 })
 export class PosteosComponent implements OnInit {
   usuarios: Blog[] = []
-  posteos: Blog[] = []
 
-  constructor(private elementRef: ElementRef, private servicio: BlogService ) { }
+  constructor(private elementRef: ElementRef, private servicio: BlogService) { }
 
   ngAfterViewInit() {
     this.elementRef.nativeElement.ownerDocument.body
@@ -19,22 +18,13 @@ export class PosteosComponent implements OnInit {
   }
 
   ngOnInit(): void {
-  this.obtenerUsuarios()
+    this.obtenerUsuarios()
   }
 
   obtenerUsuarios() {
     this.servicio.obtenerUsuarios().subscribe(data => {
       this.usuarios = data
-      console.log(data) 
-    }) 
-}
-
-  obtenerPosteos() {
-    this.servicio.obtenerPosteos().subscribe(data => {
-      this.posteos = data
-      console.log(data) 
-    }) 
-}
-
-
+      console.log(data)
+    })
+  }
 }
