@@ -6,7 +6,7 @@ Con un llamado a la API de https://jsonplaceholder.typicode.com, la aplicación 
 
 Tecnologías utilizadas: Angular (HTML, CSS, JavaScript, TypeScript) y librería Bootstrap.
 
-Pueden verla funcionando en el siguiente link: PENDIENTE
+Pueden verla funcionando en el siguiente link: https://angularblog01.herokuapp.com/
 
 ## Instrucciones para correrlo localmente
 
